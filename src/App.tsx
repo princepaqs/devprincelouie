@@ -24,9 +24,17 @@ export default function App() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-200 via-rose-200 to-red-200 px-4">
       {!accepted ? (
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
-          <h1 className="text-3xl font-bold text-pink-600 mb-4">
-            Will you be my Valentine? 💖
-          </h1>
+          <div className="mb-4 flex flex-col items-center">
+            <img
+              src="/bear.gif"
+              alt="bear gif"
+              className="w-40 h-40 mb-2"
+            />
+            <h1 className="text-3xl font-bold text-pink-600">
+              Will you be my Valentine?
+            </h1>
+          </div>
+
           <div className="relative flex justify-center gap-6">
             <button
               onClick={() => setAccepted(true)}
@@ -52,12 +60,17 @@ export default function App() {
         </div>
       ) : (
         <div className="bg-white rounded-2xl shadow-xl p-10 text-center">
-          <h2 className="text-4xl font-bold text-pink-600 mb-4">
-            Yay!!! 💞
-          </h2>
-          <p className="text-gray-700 text-lg">
-            I knew it 😍
-          </p>
+          <div className="mb-4 flex flex-col items-center">
+            <img
+              src="/happy-valentines.gif"
+              alt="happy-valentines gif"
+              className="w-40 h-40 mb-2"
+            />
+            <h2 className="text-4xl font-bold text-pink-600 mb-4">
+              Yay!!! 💞
+            </h2>
+          </div>
+
         </div>
       )}
     </div>
