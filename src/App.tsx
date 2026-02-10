@@ -10,7 +10,7 @@ export default function App() {
   const moveNoButton = () => {
     if (!noRef.current || !containerRef.current) return;
 
-    const moveDistance = 150;
+    const moveDistance = 130;
 
     const angle = Math.random() * Math.PI * 2;
     const dx = Math.cos(angle) * moveDistance;
@@ -23,20 +23,26 @@ export default function App() {
       const nextX = prev.x + dx;
       const nextY = prev.y + dy;
 
-      // Clamp inside container
+      const isMobile = window.innerWidth < 768;
+
+      if (!isMobile) {
+
+        return { x: nextX, y: nextY };
+      }
+
+
       const minX = container.left - button.left + prev.x;
-      const maxX =
-        container.right - button.right + prev.x;
+      const maxX = container.right - button.right + prev.x;
 
       const minY = container.top - button.top + prev.y;
-      const maxY =
-        container.bottom - button.bottom + prev.y;
+      const maxY = container.bottom - button.bottom + prev.y;
 
       return {
         x: Math.min(Math.max(nextX, minX), maxX),
         y: Math.min(Math.max(nextY, minY), maxY),
       };
     });
+
   };
 
   return (
