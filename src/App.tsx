@@ -56,7 +56,7 @@ export default function App() {
           <div className="relative flex justify-center gap-6">
             <button
               onClick={() => setAccepted(true)}
-              className="px-6 py-3 rounded-xl bg-pink-500 text-white font-semibold hover:bg-pink-600 transition"
+              className="cursor-pointer px-6 py-3 rounded-xl bg-pink-500 text-white font-semibold hover:bg-pink-600 transition"
             >
               Yes 💘
             </button>
@@ -69,7 +69,7 @@ export default function App() {
               style={{
                 transform: `translate(${offset.x}px, ${offset.y}px)`,
               }}
-              className="px-6 py-3 rounded-xl bg-gray-300 text-gray-800 font-semibold
+              className="cursor-pointer px-6 py-3 rounded-xl bg-gray-300 text-gray-800 font-semibold
                          transition-transform duration-300 ease-out"
             >
               No 💔
